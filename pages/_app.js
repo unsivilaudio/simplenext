@@ -1,5 +1,5 @@
 import React from 'react';
-import App, { Container } from 'next/app';
+import App from 'next/app';
 
 import Navbar from '../components/Navbar';
 import './_app.css';
@@ -19,10 +19,10 @@ class MyApp extends App {
         const { Component, pageProps } = this.props;
 
         return (
-            <Container>
+            <>
                 <Navbar />
                 <Component {...pageProps} />
-            </Container>
+            </>
         );
     }
 }
