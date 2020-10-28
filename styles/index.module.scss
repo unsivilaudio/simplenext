@@ -1,0 +1,36 @@
+.Index {
+    width: 60vw;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+
+    & .Header {
+        background: #951dc0;
+        color: #eee;
+        font-size: 2.5rem;
+        font-weight: 700;
+        padding: 1rem 2.2rem;
+    }
+
+    & .List {
+        list-style: none;
+        line-height: 1.2;
+
+        & li {
+            cursor: pointer;
+            padding: 0.8rem 2.2rem;
+            transition: all 0.3s ease;
+
+            &:nth-child(even) {
+                background: #ccc;
+            }
+            &:nth-child(odd) {
+                background: #a3a3a3;
+            }
+
+            &:hover {
+                color: #eee;
+                background: #b089be;
+            }
+        }
+    }
+}

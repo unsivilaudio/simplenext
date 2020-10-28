@@ -1,5 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import Link from 'next/link';
+
+import classes from '../styles/index.module.scss';
 
 class App extends React.Component {
     static async getInitialProps() {
@@ -13,11 +16,15 @@ class App extends React.Component {
         const { posts } = this.props;
 
         return (
-            <div className='Container'>
-                <h1>My New App Component</h1>
-                <ul>
+            <div className={classes.Index}>
+                <header className={classes.Header}>List of Random Posts</header>
+                <ul className={classes.List}>
                     {posts.map(el => {
-                        return <li key={el.id}>{el.title}</li>;
+                        return (
+                            <Link href={`/post?id=${el.id}`} key={el.id}>
+                                <li>{el.title}</li>
+                            </Link>
+                        );
                     })}
                 </ul>
             </div>

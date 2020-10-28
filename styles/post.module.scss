@@ -1,0 +1,71 @@
+.Post {
+    width: 60vw;
+    margin: 2.5rem auto;
+
+    & .Header {
+        font-size: 2.5rem;
+        color: #ecffaa;
+        background: #c34dff;
+        padding: 0.8rem 1.5rem;
+    }
+
+    & .Content {
+        background: #faffee;
+        padding: 1rem;
+        padding-top: 1.8rem;
+    }
+}
+
+.Comment {
+    position: relative;
+    background: #eaefee;
+    color: #3a211f;
+    font-size: 1.6rem;
+    padding: 1rem 2.2rem;
+    border-radius: 0.7rem;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    &::before {
+        content: '\201C';
+        position: absolute;
+        font-size: 15rem;
+        line-height: 0.82;
+        opacity: 0.2;
+        margin: 0;
+        top: 0;
+        left: -6px;
+    }
+    &::after {
+        content: '\201D';
+        position: absolute;
+        font-size: 15rem;
+        line-height: 0.82;
+        opacity: 0.2;
+        margin: 0;
+        top: calc(100% - 3.8rem);
+        right: -6px;
+    }
+
+    & .Text {
+        position: relative;
+        font-style: italic;
+        font-weight: 700;
+        padding: 0 3.5rem;
+    }
+
+    & .Cite {
+        margin-right: 5rem;
+        text-align: right;
+        position: relative;
+
+        &::before {
+            content: '\2014';
+            position: relative;
+            left: -5px;
+        }
+    }
+}

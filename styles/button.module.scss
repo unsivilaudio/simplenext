@@ -1,0 +1,68 @@
+.Button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    text-transform: uppercase;
+    padding: 0.8rem 1.4rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 7px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: none;
+    }
+
+    &.Primary {
+        color: #efefef;
+        background: #3a98bd;
+
+        &:hover {
+            background: #3a59bd;
+        }
+    }
+
+    &.Secondary {
+        color: #efefef;
+        background: #bd803a;
+
+        &:hover {
+            background: #bd593a;
+        }
+    }
+
+    &.Danger {
+        color: #efefef;
+        background: #e75947;
+
+        &:hover {
+            background: #d33b3b;
+        }
+    }
+
+    &.Success {
+        color: #efefef;
+        background: #54e747;
+
+        &:hover {
+            background: #37b61d;
+        }
+    }
+
+    &.Disabled {
+        cursor: not-allowed;
+        color: #c7c7c7;
+        background: #4d4d4d;
+
+        &:active,
+        &:hover {
+            background: #4d4d4d;
+            transform: translateY(0);
+        }
+    }
+}

@@ -1,25 +1,36 @@
+import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/dist/client/router';
+
+import Button from '../components/ui/Button';
+import classes from '../styles/navbar.module.scss';
 
 const navbar = props => {
-    const styles = {
-        background: '#333',
-        color: '#eee',
-        display: 'flex',
-        justifyContent: 'space-between',
-        padding: '1rem',
+    const router = useRouter();
+
+    const handleNavigate = path => {
+        router.push(path);
     };
 
     return (
-        <div style={styles}>
-            <Link href='/'>
-                <button>Home</button>
-            </Link>
-            <Link href='/about'>
-                <button>About</button>
-            </Link>
-            <Link href='/contact'>
-                <button>Contact Us.</button>
-            </Link>
+        <div className={classes.Navbar}>
+            <div className={classes.Brand}>
+                <Link href='/'>
+                    <a>SimpleNext</a>
+                </Link>
+            </div>
+            <div className={classes.Links}>
+                <Button
+                    variant='Primary'
+                    clicked={() => handleNavigate('/about')}>
+                    About
+                </Button>
+                <Button
+                    variant='Primary'
+                    clicked={() => handleNavigate('/contact')}>
+                    Contact Us
+                </Button>
+            </div>
         </div>
     );
 };
