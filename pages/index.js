@@ -21,7 +21,10 @@ class App extends React.Component {
                 <ul className={classes.List}>
                     {posts.map(el => {
                         return (
-                            <Link href={`/post?id=${el.id}`} key={el.id}>
+                            <Link
+                                href={`/post?id=${el.id}`}
+                                key={el.id}
+                                as={`/p/${el.id}`}>
                                 <li>{el.title}</li>
                             </Link>
                         );
